@@ -8,14 +8,14 @@
 
   <Identity
     Name="7f08f1d8-cfcf-4e83-8424-fc7effe030e9"
-    Publisher="CN=24457"
+    Publisher="CN=Kanade"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="7f08f1d8-cfcf-4e83-8424-fc7effe030e9" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>UWP开发入门</DisplayName>
-    <PublisherDisplayName>24457</PublisherDisplayName>
+    <PublisherDisplayName>Kanade</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
