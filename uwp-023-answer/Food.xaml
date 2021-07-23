@@ -1,0 +1,20 @@
+﻿<Page
+    x:Class="UWP开发入门.Food"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWP开发入门"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel Name="MyStackPanel">
+            <!-- 因为直接用Image显示的效果不好
+                 所以采用background的方式显示
+                 与Financial.xaml形成对比
+            <Image Source="Assets/Food.png"/>
+            -->
+        </StackPanel>
+    </Grid>
+</Page>
