@@ -9,6 +9,16 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <Image HorizontalAlignment="Left" Source="Assets/color-logo.png" Width="240" Height="180"/>
+        <Image Grid.Row="1" Source="Assets/ticket.jpg" Width=" 400" Height="400"/>
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Order" Style="{StaticResource HeaderTextBlockStyle}" FontWeight="SemiBold" Canvas.ZIndex="1"/>
+            <TextBlock Text=" 96" Style="{StaticResource HeaderTextBlockStyle}" FontSize="72" FontWeight="SemiBold" Canvas.ZIndex="2"/>
+        </StackPanel>
     </Grid>
 </Page>

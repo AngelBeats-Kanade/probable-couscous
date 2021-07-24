@@ -10,22 +10,22 @@
 
     <NavigationView Name="MyNavigationView" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="MyNavigationView_ItemInvoked">
         <NavigationView.MenuItems>
-            <NavigationViewItem Content="Donuts">
+            <NavigationViewItem Name="Donuts" Content="Donuts">
                 <NavigationViewItem.Icon>
                     <BitmapIcon UriSource="Assets/donut-icon.png"/>
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
-            <NavigationViewItem Content="Coffee">
+            <NavigationViewItem Name="Coffee" Content="Coffee">
                 <NavigationViewItem.Icon>
                     <BitmapIcon UriSource="Assets/coffee-icon.png"/>
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
-            <NavigationViewItem Content="Schedule">
+            <NavigationViewItem Name="Schedule" Content="Schedule">
                 <NavigationViewItem.Icon>
                     <BitmapIcon UriSource="Assets/schedule-icon.png"/>
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
-            <NavigationViewItem Content="Complete">
+            <NavigationViewItem Name="Complete" Content="Complete">
                 <NavigationViewItem.Icon>
                     <BitmapIcon UriSource="Assets/complete-icon.png"/>
                 </NavigationViewItem.Icon>
@@ -39,7 +39,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Frame Name="MyFrame" Loaded="MyFrame_Loaded" Navigated="MyFrame_Navigated"/>
+                <Frame Name="MyFrame" Loaded="MyFrame_Loaded" Navigated="MyFrame_Navigated" NavigationFailed="MyFrame_NavigationFailed"/>
                 <Image Grid.Column="1" Source="Assets/background.jpg" Stretch="None"/>
             </Grid>
         </NavigationView.Content>
