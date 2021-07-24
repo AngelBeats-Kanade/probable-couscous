@@ -8,7 +8,40 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <NavigationView Name="MyNavigationView" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="MyNavigationView_ItemInvoked">
+        <NavigationView.MenuItems>
+            <NavigationViewItem Content="Donuts">
+                <NavigationViewItem.Icon>
+                    <BitmapIcon UriSource="Assets/donut-icon.png"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItem Content="Coffee">
+                <NavigationViewItem.Icon>
+                    <BitmapIcon UriSource="Assets/coffee-icon.png"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItem Content="Schedule">
+                <NavigationViewItem.Icon>
+                    <BitmapIcon UriSource="Assets/schedule-icon.png"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItem Content="Complete">
+                <NavigationViewItem.Icon>
+                    <BitmapIcon UriSource="Assets/complete-icon.png"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+        </NavigationView.MenuItems>
         
-    </Grid>
+        <NavigationView.Content>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Frame Name="MyFrame" Loaded="MyFrame_Loaded" Navigated="MyFrame_Navigated"/>
+                <Image Grid.Column="1" Source="Assets/background.jpg" Stretch="None"/>
+            </Grid>
+        </NavigationView.Content>
+    </NavigationView>
 </Page>
