@@ -15,11 +15,13 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
 
-        <Image Source="Assets/white-logo.png" Width="240" Height="180"/>
+        <Image Source="Assets/white-logo.png" Style="{StaticResource MyLogoStyle}"/>
+
+        <RelativePanel Grid.Row="1">
+            <TextBlock Text="Pickup:" Name="MyTextBlock" Style="{StaticResource MySchedulePageTextBlockStyle}"/>
+            <CalendarDatePicker Name="MyCalendarDatePicker" RelativePanel.RightOf="MyTextBlock" RelativePanel.AlignVerticalCenterWith="MyTextBlock"/>
+            <TimePicker ClockIdentifier="12HourClock" RelativePanel.Below="MyCalendarDatePicker" RelativePanel.AlignLeftWith="MyCalendarDatePicker" Margin="0,10,0,0"/>
+        </RelativePanel>
     </Grid>
 </Page>

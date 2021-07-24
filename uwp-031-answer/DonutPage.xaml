@@ -20,6 +20,12 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Image Source="Assets/white-logo.png" Width="240" Height="180"/>
+        <Image Source="Assets/white-logo.png" Style="{StaticResource MyLogoStyle}"/>
+        
+        <TextBlock Grid.Row="1" Text="Original Glazed Count:" Style="{StaticResource MyDonutPageTextBlockStyle}"/>
+        <Slider Grid.Row="1" Grid.Column="1" Style="{StaticResource MySliderStyle}"/>
+
+        <TextBlock Grid.Row="2" Text="Speedway Special Count:" Style="{StaticResource MyDonutPageTextBlockStyle}"/>
+        <Slider Grid.Row="2" Grid.Column="1" Style="{StaticResource MySliderStyle}"/>
     </Grid>
 </Page>

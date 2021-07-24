@@ -15,11 +15,41 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
 
-        <Image Source="Assets/white-logo.png" Width="240" Height="180"/>
+        <Image Source="Assets/white-logo.png" Style="{StaticResource MyLogoStyle}"/>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Name="RoastButton" Content="Roast" Style="{StaticResource MyButtonStyle}">
+                <Button.Flyout>
+                    <MenuFlyout Placement="Top" x:Name="RoastButtonFlyoutMenu">
+                        <MenuFlyoutItem x:Name="RoastButtonNone" Text="None" Style="{StaticResource MenuFlyoutItemRevealStyle}" Click="MyButton_Click"/>
+                        <MenuFlyoutItem x:Name="RoastButtonDark" Text="Dark" Style="{StaticResource MenuFlyoutItemRevealStyle}" Click="MyButton_Click"/>
+                        <MenuFlyoutItem x:Name="RoastButtonMedium" Text="Medium" Style="{StaticResource MenuFlyoutItemRevealStyle}" Click="MyButton_Click"/>
+                    </MenuFlyout>
+                </Button.Flyout>
+            </Button>
+            <Button Name="SweetnerButton" Content="Sweetner" Style="{StaticResource MyButtonStyle}">
+                <Button.Flyout>
+                    <MenuFlyout Placement="Top" x:Name="SweetnerButtonFlyoutMenu">
+                        <MenuFlyoutItem x:Name="SweetnerButtonNone" Text="None" Style="{StaticResource MenuFlyoutItemRevealStyle}" Click="MyButton_Click"/>
+                        <MenuFlyoutItem x:Name="SweetnerButtonSugar" Text="Sugar" Style="{StaticResource MenuFlyoutItemRevealStyle}" Click="MyButton_Click"/>
+                    </MenuFlyout>
+                </Button.Flyout>
+            </Button>
+            <Button Name="CreamButton" Content="Cream" Style="{StaticResource MyButtonStyle}">
+                <Button.Flyout>
+                    <MenuFlyout Placement="Top" x:Name="CreamButtonFlyoutMenu">
+                        <MenuFlyoutItem x:Name="CreamButtonNone" Text="None" Style="{StaticResource MenuFlyoutItemRevealStyle}" Click="MyButton_Click"/>
+                        <MenuFlyoutItem x:Name="CreamButtonMilk" Text="2% Milk" Style="{StaticResource MenuFlyoutItemRevealStyle}" Click="MyButton_Click"/>
+                        <MenuFlyoutItem x:Name="CreamButtonWholeMilk" Text="Whole Milk" Style="{StaticResource MenuFlyoutItemRevealStyle}" Click="MyButton_Click"/>
+                    </MenuFlyout>
+                </Button.Flyout>
+            </Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <TextBlock Text="Coffee:" Style="{StaticResource MyCoffeePageTextBlockStyle}"/>
+            <TextBlock Name="MyTextBlock" Style="{StaticResource MyCoffeePageTextBlockStyle}"/>
+        </StackPanel>
     </Grid>
 </Page>

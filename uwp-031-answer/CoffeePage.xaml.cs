@@ -26,5 +26,10 @@ namespace UWP开发入门
         {
             this.InitializeComponent();
         }
+
+        private void MyButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

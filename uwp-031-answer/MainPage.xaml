@@ -40,7 +40,7 @@
                 </Grid.ColumnDefinitions>
 
                 <Frame Name="MyFrame" Loaded="MyFrame_Loaded" Navigated="MyFrame_Navigated" NavigationFailed="MyFrame_NavigationFailed"/>
-                <Image Grid.Column="1" Source="Assets/background.jpg" Stretch="None"/>
+                <Image Grid.Column="1" Source="Assets/background.jpg" Stretch="UniformToFill"/>
             </Grid>
         </NavigationView.Content>
     </NavigationView>
