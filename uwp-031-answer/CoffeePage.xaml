@@ -49,7 +49,9 @@
 
         <StackPanel Grid.Row="2" Orientation="Horizontal">
             <TextBlock Text="Coffee:" Style="{StaticResource MyCoffeePageTextBlockStyle}"/>
-            <TextBlock Name="MyTextBlock" Style="{StaticResource MyCoffeePageTextBlockStyle}"/>
+            <TextBlock Name="MyRoastTextBlock" Margin="40,0,0,0" Style="{StaticResource MyCoffeePageResultTextBlockStyle}"/>
+            <TextBlock Name="MySweetnerTextBlock" Style="{StaticResource MyCoffeePageResultTextBlockStyle}"/>
+            <TextBlock Name="MyCreamTextBlock" Style="{StaticResource MyCoffeePageResultTextBlockStyle}"/>
         </StackPanel>
     </Grid>
 </Page>

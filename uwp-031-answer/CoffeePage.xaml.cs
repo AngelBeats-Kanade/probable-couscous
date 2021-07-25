@@ -27,9 +27,52 @@ namespace UWP开发入门
             this.InitializeComponent();
         }
 
+        private bool isRoast = false;
+
         private void MyButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            var selectedItem = ((MenuFlyoutItem)sender)?.Name.ToString();
+            var selectedText = ((MenuFlyoutItem)sender)?.Text.ToString();
+
+            if (selectedItem == "RoastButtonNone")
+            {
+                isRoast = false;
+                MyRoastTextBlock.Text = selectedText;
+            }
+            else if (selectedItem == "RoastButtonDark" || selectedItem == "RoastButtonMedium")
+            {
+                isRoast = true;
+            }
+
+            if (isRoast == true)
+            {
+                if (selectedItem == "RoastButtonDark" || selectedItem == "RoastButtonMedium")
+                {
+                    MyRoastTextBlock.Text = selectedText;
+                }
+                else if (selectedItem == "SweetnerButtonNone" || selectedItem == "SweetnerButtonSugar")
+                {
+                    if(selectedItem == "SweetnerButtonNone")
+                    {
+                        MySweetnerTextBlock.Text = "";
+                    }
+                    else 
+                    {
+                        MySweetnerTextBlock.Text = string.Format(" + {0}", selectedText);
+                    }
+                }
+                else if (selectedItem == "CreamButtonNone" || selectedItem == "CreamButtonMilk" || selectedItem == "CreamButtonWholeMilk")
+                {
+                    if (selectedItem == "CreamButtonNone")
+                    {
+                        MyCreamTextBlock.Text = "";
+                    }
+                    else
+                    {
+                        MyCreamTextBlock.Text = string.Format(" + {0}", selectedText);
+                    }
+                }
+            }
         }
     }
 }
