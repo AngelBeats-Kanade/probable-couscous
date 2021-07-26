@@ -28,11 +28,11 @@
                     </MenuFlyout>
                 </Button.Flyout>
             </Button>
-            <Button Name="SweetnerButton" Content="Sweetner" Style="{StaticResource MyButtonStyle}">
+            <Button Name="SweetenerButton" Content="Sweetener" Style="{StaticResource MyButtonStyle}">
                 <Button.Flyout>
-                    <MenuFlyout Placement="Top" x:Name="SweetnerButtonFlyoutMenu">
-                        <MenuFlyoutItem x:Name="SweetnerButtonNone" Text="None" Style="{StaticResource MenuFlyoutItemRevealStyle}" Click="MyButton_Click"/>
-                        <MenuFlyoutItem x:Name="SweetnerButtonSugar" Text="Sugar" Style="{StaticResource MenuFlyoutItemRevealStyle}" Click="MyButton_Click"/>
+                    <MenuFlyout Placement="Top" x:Name="SweetenerButtonFlyoutMenu">
+                        <MenuFlyoutItem x:Name="SweetenerButtonNone" Text="None" Style="{StaticResource MenuFlyoutItemRevealStyle}" Click="MyButton_Click"/>
+                        <MenuFlyoutItem x:Name="SweetenerButtonSugar" Text="Sugar" Style="{StaticResource MenuFlyoutItemRevealStyle}" Click="MyButton_Click"/>
                     </MenuFlyout>
                 </Button.Flyout>
             </Button>
@@ -50,7 +50,7 @@
         <StackPanel Grid.Row="2" Orientation="Horizontal">
             <TextBlock Text="Coffee:" Style="{StaticResource MyCoffeePageTextBlockStyle}"/>
             <TextBlock Name="MyRoastTextBlock" Margin="40,0,0,0" Style="{StaticResource MyCoffeePageResultTextBlockStyle}"/>
-            <TextBlock Name="MySweetnerTextBlock" Style="{StaticResource MyCoffeePageResultTextBlockStyle}"/>
+            <TextBlock Name="MySweetenerTextBlock" Style="{StaticResource MyCoffeePageResultTextBlockStyle}"/>
             <TextBlock Name="MyCreamTextBlock" Style="{StaticResource MyCoffeePageResultTextBlockStyle}"/>
         </StackPanel>
     </Grid>

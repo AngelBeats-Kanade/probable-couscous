@@ -38,6 +38,8 @@ namespace UWP开发入门
             {
                 isRoast = false;
                 MyRoastTextBlock.Text = selectedText;
+                MySweetenerTextBlock.Text = "";
+                MyCreamTextBlock.Text = "";
             }
             else if (selectedItem == "RoastButtonDark" || selectedItem == "RoastButtonMedium")
             {
@@ -50,15 +52,15 @@ namespace UWP开发入门
                 {
                     MyRoastTextBlock.Text = selectedText;
                 }
-                else if (selectedItem == "SweetnerButtonNone" || selectedItem == "SweetnerButtonSugar")
+                else if (selectedItem == "SweetenerButtonNone" || selectedItem == "SweetenerButtonSugar")
                 {
-                    if(selectedItem == "SweetnerButtonNone")
+                    if(selectedItem == "SweetenerButtonNone")
                     {
-                        MySweetnerTextBlock.Text = "";
+                        MySweetenerTextBlock.Text = "";
                     }
-                    else 
+                    else
                     {
-                        MySweetnerTextBlock.Text = string.Format(" + {0}", selectedText);
+                        MySweetenerTextBlock.Text = string.Format(" + {0}", selectedText);
                     }
                 }
                 else if (selectedItem == "CreamButtonNone" || selectedItem == "CreamButtonMilk" || selectedItem == "CreamButtonWholeMilk")

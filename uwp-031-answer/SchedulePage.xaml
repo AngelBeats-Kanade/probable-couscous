@@ -12,7 +12,6 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -20,8 +19,8 @@
 
         <RelativePanel Grid.Row="1">
             <TextBlock Text="Pickup:" Name="MyTextBlock" Style="{StaticResource MySchedulePageTextBlockStyle}"/>
-            <CalendarDatePicker Name="MyCalendarDatePicker" RelativePanel.RightOf="MyTextBlock" RelativePanel.AlignVerticalCenterWith="MyTextBlock"/>
-            <TimePicker ClockIdentifier="12HourClock" RelativePanel.Below="MyCalendarDatePicker" RelativePanel.AlignLeftWith="MyCalendarDatePicker" Margin="0,10,0,0"/>
+            <CalendarDatePicker Name="MyCalendarDatePicker" Foreground="White" RelativePanel.RightOf="MyTextBlock" RelativePanel.AlignVerticalCenterWith="MyTextBlock"/>
+            <TimePicker Name="MyTimePicker" ClockIdentifier="12HourClock" Foreground="White" RelativePanel.Below="MyCalendarDatePicker" RelativePanel.AlignLeftWith="MyCalendarDatePicker" Margin="0,10,0,0"/>
         </RelativePanel>
     </Grid>
 </Page>
