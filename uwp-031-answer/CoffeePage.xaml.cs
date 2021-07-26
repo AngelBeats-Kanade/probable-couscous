@@ -27,53 +27,35 @@ namespace UWP开发入门
             this.InitializeComponent();
         }
 
-        private bool isRoast = false;
-
         private void MyButton_Click(object sender, RoutedEventArgs e)
         {
             var selectedItem = ((MenuFlyoutItem)sender)?.Name.ToString();
             var selectedText = ((MenuFlyoutItem)sender)?.Text.ToString();
 
-            if (selectedItem == "RoastButtonNone")
+            if (selectedItem == "RoastButtonNone" || selectedItem == "RoastButtonDark" || selectedItem == "RoastButtonMedium")
             {
-                isRoast = false;
                 MyRoastTextBlock.Text = selectedText;
-                MySweetenerTextBlock.Text = "";
-                MyCreamTextBlock.Text = "";
+                if (MyRoastTextBlock.Text == "None")
+                {
+                    MySweetenerTextBlock.Text = "";
+                    MyCreamTextBlock.Text = "";
+                }
             }
-            else if (selectedItem == "RoastButtonDark" || selectedItem == "RoastButtonMedium")
+            else if (selectedItem == "SweetenerButtonNone" || selectedItem == "SweetenerButtonSugar")
             {
-                isRoast = true;
+                MySweetenerTextBlock.Text = MyRoastTextBlock.Text == "None" ||
+                                            string.IsNullOrEmpty(MyRoastTextBlock.Text) ||
+                                            selectedItem == "SweetenerButtonNone"
+                                            ? ""
+                                            : string.Format(" + {0}", selectedText);
             }
-
-            if (isRoast == true)
+            else if (selectedItem == "CreamButtonNone" || selectedItem == "CreamButtonMilk" || selectedItem == "CreamButtonWholeMilk")
             {
-                if (selectedItem == "RoastButtonDark" || selectedItem == "RoastButtonMedium")
-                {
-                    MyRoastTextBlock.Text = selectedText;
-                }
-                else if (selectedItem == "SweetenerButtonNone" || selectedItem == "SweetenerButtonSugar")
-                {
-                    if(selectedItem == "SweetenerButtonNone")
-                    {
-                        MySweetenerTextBlock.Text = "";
-                    }
-                    else
-                    {
-                        MySweetenerTextBlock.Text = string.Format(" + {0}", selectedText);
-                    }
-                }
-                else if (selectedItem == "CreamButtonNone" || selectedItem == "CreamButtonMilk" || selectedItem == "CreamButtonWholeMilk")
-                {
-                    if (selectedItem == "CreamButtonNone")
-                    {
-                        MyCreamTextBlock.Text = "";
-                    }
-                    else
-                    {
-                        MyCreamTextBlock.Text = string.Format(" + {0}", selectedText);
-                    }
-                }
+                MyCreamTextBlock.Text = MyRoastTextBlock.Text == "None" ||
+                                        string.IsNullOrEmpty(MyRoastTextBlock.Text) ||
+                                        selectedItem == "CreamButtonNone"
+                                        ? ""
+                                        : string.Format(" + {0}", selectedText);
             }
         }
     }
