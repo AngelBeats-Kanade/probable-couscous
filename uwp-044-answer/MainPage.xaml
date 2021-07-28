@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="UWP开发入门.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWP开发入门"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:UWP开发入门.Models"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="LightGray">
+        <NavigationView Name="MyNavigationView" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="MyNavigationView_ItemInvoked">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Financial">
+                    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE80F;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Food">
+                    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE1CE;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+            
+            <NavigationView.Header>
+                <RelativePanel>
+                    <TextBlock Name="MyTitleTextBlock" Text="Title" FontWeight="Bold" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+                    <AutoSuggestBox QueryIcon="Find" PlaceholderText="Search" Width="200" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" Margin="0,0,10,0"/>
+                </RelativePanel>
+            </NavigationView.Header>
+
+            <GridView Margin="20" ItemsSource="{x:Bind newsItems}">
+                <GridView.ItemTemplate>
+                    <DataTemplate x:DataType="data:NewsItem">
+                        <local:NewsControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+        </NavigationView>
+    </Grid>
+</Page>
