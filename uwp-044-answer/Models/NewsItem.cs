@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,12 +9,13 @@ namespace UWP开发入门.Models
 {
     public class NewsItem
     {
-        public short Id;
-        public string Category;
-        public string Headline;
-        public string Subhead;
-        public string Dateline;
-        public string Image;
+        public short Id { get; set; }
+        public string Category { get; set; }
+        public string Headline { get; set; }
+        public string Subhead { get; set; }
+        public string Dateline { get; set; }
+        public string Image { get; set; }
+
         public static List<NewsItem> GetNewsItems()
         {
             List<NewsItem> newsItems = new List<NewsItem>
@@ -31,6 +33,18 @@ namespace UWP开发入门.Models
             };
 
             return newsItems;
+        }
+
+        public static void GetNews(string Category, ObservableCollection<NewsItem> newsItems)
+        {
+            IEnumerable<NewsItem> filteredItems = from item in GetNewsItems()
+                                                  where item.Category == Category
+                                                  select item;
+            newsItems.Clear();
+            foreach (NewsItem item in filteredItems)
+            {
+                newsItems.Add(item);
+            }
         }
     }
 }

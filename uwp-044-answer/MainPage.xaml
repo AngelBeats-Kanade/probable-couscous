@@ -10,6 +10,27 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="LightGray">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="NarrowLayout">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MyAutoSuggestBox.Visibility" Value="Collapsed"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="WideLayout">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="400"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MyAutoSuggestBox.Visibility" Value="Visible"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        
         <NavigationView Name="MyNavigationView" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="MyNavigationView_ItemInvoked">
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Financial">
@@ -27,14 +48,14 @@
             <NavigationView.Header>
                 <RelativePanel>
                     <TextBlock Name="MyTitleTextBlock" Text="Title" FontWeight="Bold" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
-                    <AutoSuggestBox QueryIcon="Find" PlaceholderText="Search" Width="200" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" Margin="0,0,10,0"/>
+                    <AutoSuggestBox Name="MyAutoSuggestBox" QueryIcon="Find" PlaceholderText="Search" Width="200" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" Margin="0,0,10,0"/>
                 </RelativePanel>
             </NavigationView.Header>
 
-            <GridView Margin="20" ItemsSource="{x:Bind newsItems}">
+            <GridView Margin="20,0,0,0" ItemsSource="{x:Bind newsItems}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <GridView.ItemTemplate>
                     <DataTemplate x:DataType="data:NewsItem">
-                        <local:NewsControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                        <local:NewsControl/>
                     </DataTemplate>
                 </GridView.ItemTemplate>
             </GridView>

@@ -36,9 +36,9 @@
 
         <RelativePanel Name="MyRelativePanel" Width="200" Height="275" Background="White" Margin="10">
             <Image Name="MyGridViewImage" Source="{x:Bind NewsItems.Image}" HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="Uniform" RelativePanel.AlignTopWithPanel="True"/>
-            <TextBlock Name="MyGridViewHeadlineTextBlock" Text="{x:Bind NewsItems.Headline}" FontSize="18" Margin="10,10,10,0" RelativePanel.Below="MyGridViewImage"/>
+            <TextBlock Name="MyGridViewHeadlineTextBlock" Text="{x:Bind NewsItems.Headline}" FontSize="18" Margin="10,10,10,0" TextWrapping="Wrap" RelativePanel.Below="MyGridViewImage"/>
             <TextBlock Name="MyGridViewSubheadTextBlock" Text="{x:Bind NewsItems.Subhead}" FontSize="15" Margin="10,0,10,0" TextWrapping="Wrap" RelativePanel.Below="MyGridViewHeadlineTextBlock"/>
-            <TextBlock Name="MyGridViewDatelineTextBlock" Text="{x:Bind NewsItems.Dateline}" FontSize="10" Margin="10" RelativePanel.AlignBottomWithPanel="True"/>
+            <TextBlock Name="MyGridViewDatelineTextBlock" Text="{x:Bind NewsItems.Dateline}" FontSize="10" Margin="10" TextWrapping="Wrap" RelativePanel.AlignBottomWithPanel="True"/>
         </RelativePanel>
     </Grid>
 </UserControl>
