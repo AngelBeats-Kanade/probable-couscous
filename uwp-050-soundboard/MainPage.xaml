@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="UWP开发入门.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWP开发入门"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:UWP开发入门.Model"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <NavigationView Name="MyNavigationView" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="MyNavigationView_ItemInvoked" MenuItemsSource="{x:Bind MenuItems}">
+            <NavigationView.MenuItemTemplate>
+                <DataTemplate x:DataType="data:MenuItem">
+                    <NavigationViewItem Content="{x:Bind Category}">
+                        <NavigationViewItem.Icon>
+                            <BitmapIcon UriSource="{x:Bind GetIcon(IconFile)}"/>
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                </DataTemplate>
+            </NavigationView.MenuItemTemplate>
+            <NavigationView.Header>
+                <RelativePanel VerticalAlignment="Center">
+                    <Button Name="MyBackButton" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" Visibility="Collapsed" Click="MyBackButton_Click" FontFamily="Segoe MDL2 Assets" Content="&#xE0A6;" Background="White" Margin="0,0,10,0"/>
+                    <TextBlock Name="MyTitleTextBlock" Text="All Sounds" RelativePanel.RightOf="MyBackButton"/>
+                    <AutoSuggestBox Name="MyAutoSuggestBox" PlaceholderText="Search for sounds" QueryIcon="Find" Width="200" TextChanged="MyAutoSuggestBox_TextChanged" QuerySubmitted="MyAutoSuggestBox_QuerySubmitted" RelativePanel.AlignRightWithPanel="True" Margin="0,0,10,0"/>
+                </RelativePanel>
+            </NavigationView.Header>
+            <Grid>
+                <MediaElement Name="MyMediaElement" AutoPlay="True"/>
+                <GridView Name="MyGridView" SelectionMode="None" IsItemClickEnabled="True" ItemClick="MyGridView_ItemClick" ItemsSource="{x:Bind Sounds}" AllowDrop="True" Drop="MyGridView_Drop" DragOver="MyGridView_DragOver" Margin="10,0,0,0">
+                    <GridView.ItemTemplate>
+                        <DataTemplate x:DataType="data:Sound">
+                            <Image Name="MyImage" Height="112" Width="101" Source="{x:Bind ImageFile}"/>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                </GridView>
+            </Grid>
+        </NavigationView>
+    </Grid>
+</Page>
