@@ -2,6 +2,10 @@
 Answers for video contents at https://channel9.msdn.com/Series/Windows-10-development-for-absolute-beginners.
 ##
 uwp-023: I use "NavigationView" to build the main page, which is different from Bob. That' s because MicroSoft released "NavigationView" in 2017 and MicroSoft encourages developers to use it to navigate from pages.
+##
+uwp-050: Again, I use "NavigationView", which is a modern control, to build the application.
+##
+uwp-057: As my codes are almost the same as Bob's and this application contains my privacy, I don't upload this application's source code. 
 # Windows 10 development for absolute beginners
 Windows 10 Developer Training (XAML / C#)
 
